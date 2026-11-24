@@ -46,7 +46,7 @@ cat("Intervalo temporal:", round(min(tempos), 2), "a", round(max(tempos), 2), "m
 # =========================================
 h_s_km <- 29.87551   # critério de Turner (2009)
 h_s_m  <- h_s_km * 1000
-h_t    <- 7.182595   # critério plug-in de Sheather-Jones (meses)
+h_t <- bw.nrd0(tempos)   # regra de Silverman (1986), como em González e Moraga (2023)
 
 corte_temporal <- 3
 resolucao      <- 256
