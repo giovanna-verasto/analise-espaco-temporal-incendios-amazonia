@@ -78,14 +78,16 @@ print(p_grade)
 # =========================================
 # 4. TESTE DE SEPARABILIDADE (9.999 SIMULAÇÕES MONTE CARLO)
 # =========================================
-# Referência: Ghorbani et al. (2021) / González & Moraga (2023)
+# Cortes exatos nos 11 anos civis: [0, 12], (12, 24], ..., (120, 132] meses
+cortes_anos <- seq(0, 132, by = 12)
+
 set.seed(123)
 sep_test <- separability.test(
   X     = unmark(ppp_st),
   t     = marks(ppp_st)$tempo,
   nx    = nx,
   ny    = ny,
-  nt    = nt,
+  nt    = cortes_anos,
   nperm = 9999
 )
 print(sep_test)
